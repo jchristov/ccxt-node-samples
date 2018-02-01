@@ -6,7 +6,7 @@ client.on("error", function (err) {
 });
 
 const promiseBinance = new Promise(function(resolve, reject) {
-    client.hgetall('binance', function(err, results) {
+    client.hgetall('XRP/BTC', function(err, results) {
        if (err) {
            // do something like callback(err) or whatever
        } else {
