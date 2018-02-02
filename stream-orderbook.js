@@ -57,7 +57,7 @@ let streamOrderBook = async (id, symbol, depth) => {
 
                 const orderbook = await exchange.fetchOrderBook (symbol)
 
-                client.hset(symbol, `${id}:asks`, JSON.stringify(orderbook.asks.slice (0, depth).reverse()), redis.print );
+                client.hset(symbol, `${id}:asks`, JSON.stringify(orderbook.asks.slice (0, depth)), redis.print );
                 client.hset(symbol, `${id}:bids`, JSON.stringify(orderbook.bids.slice (0, depth)), redis.print );
 
             }
